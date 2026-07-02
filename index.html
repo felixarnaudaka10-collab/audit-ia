@@ -78,6 +78,8 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(11,7,20,.82);backdro
 .svc-card p{font-size:.9rem;color:var(--muted)}
 @media (max-width:980px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:560px){.svc-grid{grid-template-columns:1fr}}
+.custom-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
+@media (max-width:900px){.custom-grid{grid-template-columns:1fr}}
 .steps{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:30px}
 .step{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:28px;position:relative}
 .step .num{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:10px;background:var(--violet-soft);color:var(--violet-light);font-weight:800;margin-bottom:16px;border:1px solid rgba(139,92,246,.3)}
@@ -211,6 +213,21 @@ footer p{font-size:.85rem;color:var(--muted2)}
       <div class="svc-card"><span class="svc-ico">📱</span><h3>Contenu réseaux</h3><p>Posts, visuels et publications générés et programmés pour rester visible sans y passer vos soirées.</p></div>
     </div>
     <p class="center" style="margin-top:26px;color:var(--muted2)">Votre besoin n'est pas dans la liste ? C'est justement à ça que sert l'appel de diagnostic.</p>
+  </div>
+</section>
+
+<!-- SUR MESURE -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <p class="eyebrow center">Sur mesure</p>
+    <h2 class="center">Et pour les projets plus ambitieux</h2>
+    <p class="lead center">Quand une automatisation ne suffit plus, on construit l'outil qu'il vous faut.</p>
+    <div class="custom-grid">
+      <div class="svc-card"><span class="svc-ico">💻</span><h3>Applications sur mesure</h3><p>Outils métier, portails clients, applications internes : on développe l'application qui colle à vos process, pas l'inverse.</p></div>
+      <div class="svc-card"><span class="svc-ico">🔎</span><h3>SEO &amp; visibilité sur les IA</h3><p>Être en tête sur Google, et devenir la réponse que citent ChatGPT, Perplexity et les moteurs de recherche IA quand on cherche votre métier.</p></div>
+      <div class="svc-card"><span class="svc-ico">🗄️</span><h3>Création de back office</h3><p>Un back office complet pour piloter votre activité : clients, commandes, planning, facturation, tout centralisé au même endroit.</p></div>
+    </div>
+    <p class="center" style="margin-top:26px;color:var(--muted2)">Projets réalisés sur devis, cadrés pendant l'appel de diagnostic.</p>
   </div>
 </section>
 
