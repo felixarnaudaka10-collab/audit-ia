@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Audit IA · Arnaud — Monsieur IA | J'installe l'IA dans votre entreprise</title>
+<meta name="description" content="Un appel gratuit de 30 minutes pour identifier la tâche qui coûte le plus de temps et d'argent à votre entreprise, et savoir exactement quoi automatiser en premier.">
+
+<!-- ============================================================= -->
+<!-- META PIXEL : coller ici ton code pixel Meta avant de lancer la pub -->
+<!-- ============================================================= -->
+
+<style>
+:root{
+  --bg:#0B0714; --panel:#171126; --panel-soft:rgba(23,17,38,.6);
+  --txt:#F4F2F8; --muted:#A9A3B8; --muted2:#7A7490;
+  --violet:#8B5CF6; --violet-light:#A78BFA; --violet-soft:rgba(139,92,246,.12);
+  --red:#EF4444; --border:rgba(244,242,248,.08);
+  --radius:16px; --maxw:1080px; font-synthesis:none;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--txt);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+section{padding:84px 0}
+h1,h2,h3{line-height:1.12;letter-spacing:-.02em;font-weight:800}
+h1{font-size:clamp(2.1rem,5.2vw,3.6rem)}
+h2{font-size:clamp(1.7rem,3.6vw,2.5rem);margin-bottom:18px}
+h3{font-size:1.15rem;font-weight:700}
+p{color:var(--muted);font-size:1.05rem}
+.violet{color:var(--violet-light)}
+.eyebrow{color:var(--violet-light);font-weight:700;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:20px}
+.center{text-align:center}
+.lead{font-size:1.15rem;color:var(--muted);max-width:680px;margin:0 auto}
+.cta{display:inline-block;background:var(--violet);color:#fff;font-weight:800;font-size:1.05rem;text-decoration:none;padding:18px 34px;border-radius:12px;border:none;cursor:pointer;transition:transform .15s,box-shadow .15s;box-shadow:0 10px 30px rgba(139,92,246,.25)}
+.cta:hover{transform:translateY(-2px);box-shadow:0 14px 38px rgba(139,92,246,.4)}
+.cta-note{display:block;color:var(--muted2);font-size:.9rem;margin-top:14px}
+header.nav{position:sticky;top:0;z-index:50;background:rgba(11,7,20,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:16px 24px}
+.brand{font-weight:800;letter-spacing:-.02em;font-size:1.05rem}
+.brand span{color:var(--violet-light)}
+.nav a.cta-sm{background:var(--violet);color:#fff;font-weight:700;text-decoration:none;padding:10px 18px;border-radius:9px;font-size:.92rem}
+.hero{padding-top:72px;text-align:center}
+.hero h1{max-width:920px;margin:0 auto 22px}
+.hero .lead{margin-bottom:14px}
+.hero .metric{display:inline-block;margin:22px 0 30px;color:var(--txt);font-weight:600;background:var(--violet-soft);border:1px solid rgba(139,92,246,.25);padding:10px 18px;border-radius:999px;font-size:.98rem}
+.stack>*+*{margin-top:18px}
+.quote-list{list-style:none;margin:22px 0;display:grid;gap:10px}
+.quote-list li{color:var(--muted);font-style:italic;padding:12px 18px;background:var(--panel-soft);border-left:3px solid var(--muted2);border-radius:8px}
+.punch{font-size:clamp(1.3rem,2.6vw,1.8rem);font-weight:800;color:var(--txt);line-height:1.25;letter-spacing:-.02em}
+.ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:30px}
+.ba-card{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:26px}
+.ba-card h3{margin-bottom:6px}
+.ba-tag{font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.ba-before .ba-tag{color:var(--red)}
+.ba-after .ba-tag{color:var(--violet-light)}
+.ba-card ul{list-style:none;margin-top:14px;display:grid;gap:12px}
+.ba-card li{display:flex;gap:10px;font-size:.98rem;color:var(--muted)}
+.ba-before li::before{content:"✕";color:var(--red);font-weight:800}
+.ba-after li::before{content:"+";color:var(--violet-light);font-weight:800}
+.math{background:var(--panel);border:1px solid var(--border);border-radius:20px;padding:42px 28px;text-align:center}
+.math-row{display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;margin:24px 0}
+.math-cell{display:flex;flex-direction:column;align-items:center}
+.math-cell .big{font-size:2.2rem;font-weight:800;color:var(--txt)}
+.math-cell .lbl{font-size:.85rem;color:var(--muted2)}
+.math-op{font-size:1.6rem;color:var(--muted2)}
+.math-total{font-size:clamp(2.2rem,6vw,3.4rem);font-weight:800;color:var(--violet-light);margin:6px 0 4px}
+.steps{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:30px}
+.step{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:28px;position:relative}
+.step .num{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:10px;background:var(--violet-soft);color:var(--violet-light);font-weight:800;margin-bottom:16px;border:1px solid rgba(139,92,246,.3)}
+.step h3{margin-bottom:8px}
+.founder{background:var(--panel);border:1px solid var(--border);border-radius:20px;padding:40px 32px}
+.founder p{margin-top:14px}
+.founder .name{color:var(--txt);font-weight:700;margin-top:22px}
+.founder .role{color:var(--violet-light);font-size:.92rem}
+.founder-grid{display:grid;grid-template-columns:220px 1fr;gap:36px;align-items:center}
+.founder-photo img{width:220px;height:220px;object-fit:cover;object-position:top;border-radius:18px;display:block;border:1px solid rgba(139,92,246,.3);box-shadow:0 16px 40px rgba(0,0,0,.4)}
+.founder-body .eyebrow{margin-top:0}
+@media (max-width:680px){
+  .founder-grid{grid-template-columns:1fr;gap:24px;text-align:center}
+  .founder-photo img{width:160px;height:160px;margin:0 auto}
+}
+.faq{display:grid;gap:12px;margin-top:28px;max-width:780px;margin-left:auto;margin-right:auto}
+details{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:4px 22px}
+summary{cursor:pointer;font-weight:600;color:var(--txt);padding:18px 0;list-style:none;display:flex;justify-content:space-between;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--violet-light);font-size:1.4rem;font-weight:700}
+details[open] summary::after{content:"−"}
+details p{padding:0 0 18px;font-size:.98rem}
+.final{text-align:center;background:linear-gradient(180deg,transparent,var(--violet-soft));border-radius:24px}
+footer{border-top:1px solid var(--border);padding:30px 0;text-align:center}
+footer p{font-size:.85rem;color:var(--muted2)}
+@media (max-width:760px){
+  section{padding:60px 0}
+  .ba-grid,.steps{grid-template-columns:1fr}
+  .math-row{gap:10px}
+  .math-cell .big{font-size:1.7rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap">
+    <span class="brand">Arnaud · <span>Monsieur IA</span></span>
+    <a href="#book" class="cta-sm">Réserver mon appel</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Pour les dirigeants de TPE/PME qui sentent que l'IA peut les aider, sans savoir quoi automatiser en premier</p>
+    <h1>Je ne vends pas des outils IA.<br><span class="violet">J'installe l'IA dans votre entreprise.</span></h1>
+    <p class="lead">En un appel, on met le doigt sur la tâche qui vous fait perdre le plus de temps et d'argent aujourd'hui. Ensuite, je reviens vers vous avec le plan précis pour l'automatiser.</p>
+    <span class="metric">⏱️ Appel gratuit de 30 minutes · Sans engagement · Vous repartez avec votre priorité n°1, qu'on travaille ensemble ou non</span>
+    <div><a href="https://calendly.com/arnaud-monsieur-ia/30min" class="cta">Réserver mon appel gratuit</a>
+      <span class="cta-note">Je vous dis ce que j'automatiserais en premier chez vous, même si on ne va pas plus loin.</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section>
+  <div class="wrap stack">
+    <h2>L'IA est partout. Sauf dans votre entreprise.</h2>
+    <p>Vous le voyez tous les jours : des posts LinkedIn sur des boîtes « transformées par l'IA », des concurrents qui automatisent, des articles qui annoncent que ceux qui ne s'y mettent pas vont décrocher.</p>
+    <p>Peut-être que vous avez essayé. Un abonnement ChatGPT que personne n'utilise vraiment. Une ou deux automatisations bricolées qui ont cassé au bout d'un mois. Et au final, votre équipe ressaisit toujours les mêmes infos à la main et vos données restent éparpillées dans cinq outils.</p>
+    <p>Ou peut-être que vous n'avez encore rien lancé, parce que face aux milliers d'outils qui sortent chaque semaine, impossible de savoir lequel s'applique vraiment à <strong style="color:var(--txt)">votre</strong> activité. Alors le sujet reste dans un coin de votre tête.</p>
+    <p>Dans les deux cas, le résultat est le même : des heures perdues chaque jour sur du travail qui devrait déjà être automatisé. L'argent fuit — vous ne voyez juste pas par quel trou.</p>
+  </div>
+</section>
+
+<!-- NOT YOUR FAULT -->
+<section style="padding-top:0">
+  <div class="wrap stack">
+    <h2>Ce n'est pas de votre faute. Les conseils qu'on vous donne sont interchangeables.</h2>
+    <p>Tous les outils, toutes les formations, tous les consultants servent le même discours générique, pensé pour une entreprise qui n'existe pas :</p>
+    <ul class="quote-list">
+      <li>« Automatisez vos process »</li>
+      <li>« Mettez de l'IA dans votre relation client »</li>
+      <li>« Faites communiquer vos outils »</li>
+    </ul>
+    <p>Très bien. Mais <strong style="color:var(--txt)">quels</strong> process ? À <strong style="color:var(--txt)">quel endroit</strong> de votre fonctionnement ? Sur les dizaines de tâches manuelles que votre équipe enchaîne chaque jour, laquelle vous coûte réellement le plus ?</p>
+    <p>Un conseil générique ne résout jamais un problème précis. Et le vôtre est précis : la manière dont vos devis sortent, l'endroit exact où vos leads refroidissent, ce que vos équipes recopient dix fois par jour. Aucune vidéo YouTube ne connaît ces détails. Il faut regarder votre entreprise de l'intérieur.</p>
+    <p class="punch">Vous n'avez pas besoin d'un énième outil. Vous avez besoin de quelqu'un qui regarde <span class="violet">votre</span> fonctionnement et vous dise quoi régler en premier.</p>
+  </div>
+</section>
+
+<!-- BEFORE / AFTER -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2 class="center">Ce que je retrouve dans presque toutes les entreprises</h2>
+    <p class="lead center">Les blocages se ressemblent. Les solutions, elles, se construisent sur mesure.</p>
+    <div class="ba-grid">
+      <div class="ba-card ba-before">
+        <span class="ba-tag">Avant</span>
+        <h3>Votre quotidien actuel</h3>
+        <ul>
+          <li>Des demandes qui arrivent par mail, téléphone ou WhatsApp, et qui refroidissent faute de relance</li>
+          <li>Les mêmes informations recopiées à la main d'un outil à l'autre</li>
+          <li>Des devis et réponses clients qui partent en plusieurs jours, chacun à sa manière</li>
+          <li>Zéro relance des anciens clients, aucun système d'avis ou de recommandation</li>
+          <li>Des décisions prises au ressenti, sans vision claire des chiffres</li>
+        </ul>
+      </div>
+      <div class="ba-card ba-after">
+        <span class="ba-tag">Après</span>
+        <h3>Une fois l'IA installée</h3>
+        <ul>
+          <li>Chaque demande centralisée dans un seul pipeline, avec relances automatiques</li>
+          <li>Fini la double saisie : vos outils échangent les données entre eux</li>
+          <li>Des devis et réponses envoyés le jour même, sur des modèles standardisés</li>
+          <li>Avis clients, recommandations et réactivation en pilote automatique</li>
+          <li>Un tableau de bord clair : ce qui rapporte, ce qui coûte</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DO THE MATH -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="math">
+      <p class="eyebrow" style="margin-bottom:10px">Posons les chiffres</p>
+      <h2 style="margin-bottom:6px">Imaginons que votre équipe perde 15 heures par semaine en tâches manuelles.</h2>
+      <div class="math-row">
+        <div class="math-cell"><span class="big">15 h</span><span class="lbl">/ semaine</span></div>
+        <span class="math-op">×</span>
+        <div class="math-cell"><span class="big">35 €</span><span class="lbl">coût horaire chargé</span></div>
+        <span class="math-op">×</span>
+        <div class="math-cell"><span class="big">52</span><span class="lbl">semaines</span></div>
+      </div>
+      <p style="margin-bottom:2px">Ça fait, au minimum</p>
+      <div class="math-total">27 300 € / an</div>
+      <p>Et c'est la fourchette basse. En réalité c'est souvent le double ou le triple — sans compter les leads jamais rappelés, les devis partis trop tard et les clients qui ne reviennent pas.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2 class="center">Concrètement, comment ça se passe</h2>
+    <p class="lead center">Deux appels. Aucun engagement pour commencer.</p>
+    <div class="steps">
+      <div class="step">
+        <span class="num">1</span>
+        <h3>L'appel de diagnostic — gratuit, 30 min</h3>
+        <p>On passe votre quotidien au crible pour identifier la tâche qui vous coûte le plus cher. C'est cette matière qui me permet de construire la bonne solution pour vous, pas une solution sur étagère.</p>
+      </div>
+      <div class="step">
+        <span class="num">2</span>
+        <h3>Le plan d'action</h3>
+        <p>Entre les deux, j'étudie la meilleure façon de régler votre problème précis. Puis je reviens avec un plan concret : quoi installer, dans quel ordre, et combien ça vous fait gagner. Vous décidez librement de la suite.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="founder founder-grid">
+      <div class="founder-photo">
+        <img src="arnaud.jpg" alt="Arnaud — Monsieur IA" loading="lazy" onerror="this.outerHTML='<div style=&quot;width:220px;height:220px;border-radius:18px;background:var(--violet-soft);border:1px solid rgba(139,92,246,.3);display:flex;align-items:center;justify-content:center;font-size:3rem;font-weight:800;color:var(--violet-light)&quot;>A</div>'">
+      </div>
+      <div class="founder-body">
+        <p class="eyebrow" style="margin-bottom:0">Qui je suis</p>
+        <h2 style="margin-top:8px">Mon métier : automatiser ce que les autres font encore à la main.</h2>
+        <p>Je suis Arnaud, fondateur de Fusion Digital et connu sous le nom de <strong style="color:var(--txt)">Monsieur IA</strong> sur Instagram, où des milliers d'entrepreneurs suivent mes tutos d'automatisation. Au quotidien, j'installe des systèmes IA dans des TPE et PME — hôtellerie, assurance, BTP, médias — et je forme leurs équipes à s'en servir vraiment.</p>
+        <p>Chaque diagnostic, c'est moi qui le fais. Pas un junior, pas un sous-traitant. Je regarde comment votre entreprise fonctionne, je vous montre où ça fuit, et on construit à partir de là.</p>
+        <p class="name">Arnaud</p>
+        <p class="role">Audit &amp; implémentation IA · Fusion Digital</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2 class="center">Questions fréquentes</h2>
+    <div class="faq">
+      <details><summary>C'est vraiment gratuit ?</summary><p>Oui, totalement. L'appel de 30 minutes est gratuit et sans engagement. Le but : identifier la tâche qui vous coûte le plus. À la fin, vous savez où part votre temps et votre argent — que l'on continue ensemble ou non.</p></details>
+      <details><summary>Je dois préparer quelque chose ?</summary><p>Non. Venez simplement avec une idée des tâches qui bouffent le temps de votre équipe. Les bonnes questions, c'est moi qui les pose pendant l'appel.</p></details>
+      <details><summary>Est-ce que vous allez remplacer mes outils actuels ?</summary><p>Non. Je pars de votre existant. Pas de migration forcée, pas de logiciel imposé : je branche l'IA sur les outils que vous utilisez déjà, quand c'est pertinent.</p></details>
+      <details><summary>Et si je veux seulement le diagnostic, sans installation ?</summary><p>Aucun problème. Le diagnostic a de la valeur en lui-même : vous saurez quoi régler en priorité et ce que ça représente en euros. L'installation est une étape séparée, que vous choisissez — ou pas.</p></details>
+      <details><summary>Mon associé ou mon équipe peut participer à l'appel ?</summary><p>Bien sûr. Plus j'ai de visibilité sur votre fonctionnement réel, plus le diagnostic est précis. Invitez qui vous voulez.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section id="book">
+  <div class="wrap">
+    <div class="final" style="padding:64px 24px">
+      <h2>Ça fait des mois que vous repoussez le sujet. On le débloque en un appel.</h2>
+      <p class="lead" style="margin-bottom:30px">Réservez votre appel gratuit de 30 minutes. On identifie ensemble la tâche qui vous coûte le plus — même si vous ne travaillez jamais avec moi.</p>
+      <a href="https://calendly.com/arnaud-monsieur-ia/30min" class="cta">Réserver mon appel gratuit</a>
+      <span class="cta-note">Créneaux en heure française · Confirmation immédiate</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap"><p>© 2026 Arnaud · Monsieur IA · Fusion Digital — Audit &amp; implémentation IA</p></div>
+</footer>
+
+</body>
+</html>
