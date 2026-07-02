@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Audit IA · Arnaud — Monsieur IA | J'installe l'IA dans votre entreprise</title>
+<title>Audit IA · Arnaud, Monsieur IA | On installe l'IA dans votre entreprise</title>
 <meta name="description" content="Un appel gratuit de 30 minutes pour identifier la tâche qui coûte le plus de temps et d'argent à votre entreprise, et savoir exactement quoi automatiser en premier.">
 
 <!-- ============================================================= -->
@@ -70,6 +70,14 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(11,7,20,.82);backdro
 .calc-field label strong{color:var(--violet-light);font-size:1.25rem;font-weight:800}
 .calc-field input[type=range]{width:100%;accent-color:var(--violet);height:6px;cursor:pointer}
 @media (max-width:680px){.calc-controls{grid-template-columns:1fr;gap:20px}}
+.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:32px}
+.svc-card{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:22px;transition:transform .15s,border-color .15s}
+.svc-card:hover{transform:translateY(-3px);border-color:rgba(139,92,246,.4)}
+.svc-ico{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:11px;background:var(--violet-soft);border:1px solid rgba(139,92,246,.25);font-size:1.3rem;margin-bottom:14px}
+.svc-card h3{font-size:1.02rem;margin-bottom:6px}
+.svc-card p{font-size:.9rem;color:var(--muted)}
+@media (max-width:980px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.svc-grid{grid-template-columns:1fr}}
 .steps{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:30px}
 .step{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:28px;position:relative}
 .step .num{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:10px;background:var(--violet-soft);color:var(--violet-light);font-weight:800;margin-bottom:16px;border:1px solid rgba(139,92,246,.3)}
@@ -118,7 +126,7 @@ footer p{font-size:.85rem;color:var(--muted2)}
   <div class="wrap">
     <p class="eyebrow">Pour les dirigeants de TPE/PME qui sentent que l'IA peut les aider, sans savoir quoi automatiser en premier</p>
     <h1>Votre équipe perd des heures chaque semaine.<br><span class="violet">Mon agence les récupère avec l'IA.</span></h1>
-    <p class="lead">Je suis Arnaud, CEO de Fusion Digital. En un appel, on met le doigt sur la tâche qui vous fait perdre le plus de temps et d'argent — puis je reviens vers vous avec le plan précis pour l'automatiser.</p>
+    <p class="lead">Je suis Arnaud, CEO de Fusion Digital. En un appel, on met le doigt sur la tâche qui vous fait perdre le plus de temps et d'argent. Ensuite, je reviens vers vous avec le plan précis pour l'automatiser.</p>
     <span class="metric">⏱️ Appel gratuit de 30 minutes · Sans engagement · Vous repartez avec votre priorité n°1, qu'on travaille ensemble ou non</span>
     <div><a href="https://calendly.com/arnaud-monsieur-ia/30min" class="cta">Réserver mon appel gratuit</a>
       <span class="cta-note">Je vous dis ce que j'automatiserais en premier chez vous, même si on ne va pas plus loin.</span>
@@ -133,7 +141,7 @@ footer p{font-size:.85rem;color:var(--muted2)}
     <p>Vous le voyez tous les jours : des posts LinkedIn sur des boîtes « transformées par l'IA », des concurrents qui automatisent, des articles qui annoncent que ceux qui ne s'y mettent pas vont décrocher.</p>
     <p>Peut-être que vous avez essayé. Un abonnement ChatGPT que personne n'utilise vraiment. Une ou deux automatisations bricolées qui ont cassé au bout d'un mois. Et au final, votre équipe ressaisit toujours les mêmes infos à la main et vos données restent éparpillées dans cinq outils.</p>
     <p>Ou peut-être que vous n'avez encore rien lancé, parce que face aux milliers d'outils qui sortent chaque semaine, impossible de savoir lequel s'applique vraiment à <strong style="color:var(--txt)">votre</strong> activité. Alors le sujet reste dans un coin de votre tête.</p>
-    <p>Dans les deux cas, le résultat est le même : des heures perdues chaque jour sur du travail qui devrait déjà être automatisé. L'argent fuit — vous ne voyez juste pas par quel trou.</p>
+    <p>Dans les deux cas, le résultat est le même : des heures perdues chaque jour sur du travail qui devrait déjà être automatisé. L'argent fuit, vous ne voyez juste pas par quel trou.</p>
   </div>
 </section>
 
@@ -185,6 +193,25 @@ footer p{font-size:.85rem;color:var(--muted2)}
   </div>
 </section>
 
+<!-- SERVICES / AUTOMATISATIONS -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2 class="center">Ce qu'on automatise le plus souvent</h2>
+    <p class="lead center">Les automatisations qui rapportent le plus dans les TPE et PME. Chez vous, on installe celles qui comptent, dans le bon ordre.</p>
+    <div class="svc-grid">
+      <div class="svc-card"><span class="svc-ico">🤖</span><h3>Chatbot IA 24/7</h3><p>Répond aux questions de vos clients, qualifie les demandes et prend les rendez-vous, même à 23 h.</p></div>
+      <div class="svc-card"><span class="svc-ico">⚡</span><h3>Relance des leads</h3><p>Chaque demande reçoit une réponse en quelques minutes, puis des relances automatiques jusqu'au rendez-vous.</p></div>
+      <div class="svc-card"><span class="svc-ico">📄</span><h3>Devis en quelques clics</h3><p>Des devis générés le jour même à partir de vos modèles, au lieu de plusieurs jours d'attente.</p></div>
+      <div class="svc-card"><span class="svc-ico">💶</span><h3>Factures &amp; impayés</h3><p>Facturation envoyée automatiquement, relances d'impayés adaptées au profil de chaque client.</p></div>
+      <div class="svc-card"><span class="svc-ico">✉️</span><h3>Tri des emails</h3><p>Votre boîte mail triée, les réponses répétitives rédigées automatiquement, il ne reste qu'à valider.</p></div>
+      <div class="svc-card"><span class="svc-ico">⭐</span><h3>Avis clients</h3><p>Demande d'avis Google envoyée après chaque prestation. Votre réputation grimpe en pilote automatique.</p></div>
+      <div class="svc-card"><span class="svc-ico">📊</span><h3>Reporting automatique</h3><p>Vos chiffres consolidés dans un tableau de bord clair, mis à jour sans saisie manuelle.</p></div>
+      <div class="svc-card"><span class="svc-ico">📱</span><h3>Contenu réseaux</h3><p>Posts, visuels et publications générés et programmés pour rester visible sans y passer vos soirées.</p></div>
+    </div>
+    <p class="center" style="margin-top:26px;color:var(--muted2)">Votre besoin n'est pas dans la liste ? C'est justement à ça que sert l'appel de diagnostic.</p>
+  </div>
+</section>
+
 <!-- CALCULATEUR INTERACTIF -->
 <section style="padding-top:0">
   <div class="wrap">
@@ -218,7 +245,7 @@ footer p{font-size:.85rem;color:var(--muted2)}
     <div class="steps">
       <div class="step">
         <span class="num">1</span>
-        <h3>L'appel de diagnostic — gratuit, 30 min</h3>
+        <h3>L'appel de diagnostic : gratuit, 30 min</h3>
         <p>On passe votre quotidien au crible pour identifier la tâche qui vous coûte le plus cher. C'est cette matière qui me permet de construire la bonne solution pour vous, pas une solution sur étagère.</p>
       </div>
       <div class="step">
@@ -235,12 +262,12 @@ footer p{font-size:.85rem;color:var(--muted2)}
   <div class="wrap">
     <div class="founder founder-grid">
       <div class="founder-photo">
-        <img src="arnaud.jpg?v=2" alt="Arnaud — Monsieur IA">
+        <img src="arnaud.jpg?v=2" alt="Arnaud, Monsieur IA">
       </div>
       <div class="founder-body">
         <p class="eyebrow" style="margin-bottom:0">Qui je suis</p>
         <h2 style="margin-top:8px">Mon métier : automatiser ce que les autres font encore à la main.</h2>
-        <p>Je suis Arnaud, CEO de <strong style="color:var(--txt)">Fusion Digital</strong> et connu sous le nom de <strong style="color:var(--txt)">Monsieur IA</strong> : plus de 15 000 abonnés sur Instagram et 20 000+ cumulés sur Instagram, Facebook, TikTok et YouTube, où je montre chaque jour comment l'IA automatise le travail répétitif. Avec Fusion Digital, j'installe des systèmes IA dans des TPE et PME — hôtellerie, assurance, BTP, médias — et je forme leurs équipes à s'en servir vraiment.</p>
+        <p>Je suis Arnaud, CEO de <strong style="color:var(--txt)">Fusion Digital</strong> et connu sous le nom de <strong style="color:var(--txt)">Monsieur IA</strong> : plus de 15 000 abonnés sur Instagram et 20 000+ cumulés sur Instagram, Facebook, TikTok et YouTube, où je montre chaque jour comment l'IA automatise le travail répétitif. Avec Fusion Digital, nous installons des systèmes IA dans des TPE et PME (hôtellerie, assurance, BTP, médias) et nous formons leurs équipes à s'en servir vraiment.</p>
         <p>Chaque diagnostic, c'est moi qui le mène personnellement. Je regarde comment votre entreprise fonctionne, je vous montre où ça fuit, et on construit à partir de là.</p>
         <p class="name">Arnaud</p>
         <p class="role">CEO Fusion Digital · Audit &amp; implémentation IA</p>
@@ -254,10 +281,10 @@ footer p{font-size:.85rem;color:var(--muted2)}
   <div class="wrap">
     <h2 class="center">Questions fréquentes</h2>
     <div class="faq">
-      <details><summary>C'est vraiment gratuit ?</summary><p>Oui, totalement. L'appel de 30 minutes est gratuit et sans engagement. Le but : identifier la tâche qui vous coûte le plus. À la fin, vous savez où part votre temps et votre argent — que l'on continue ensemble ou non.</p></details>
+      <details><summary>C'est vraiment gratuit ?</summary><p>Oui, totalement. L'appel de 30 minutes est gratuit et sans engagement. Le but : identifier la tâche qui vous coûte le plus. À la fin, vous savez où part votre temps et votre argent, que l'on continue ensemble ou non.</p></details>
       <details><summary>Je dois préparer quelque chose ?</summary><p>Non. Venez simplement avec une idée des tâches qui bouffent le temps de votre équipe. Les bonnes questions, c'est moi qui les pose pendant l'appel.</p></details>
       <details><summary>Est-ce que vous allez remplacer mes outils actuels ?</summary><p>Non. Je pars de votre existant. Pas de migration forcée, pas de logiciel imposé : je branche l'IA sur les outils que vous utilisez déjà, quand c'est pertinent.</p></details>
-      <details><summary>Et si je veux seulement le diagnostic, sans installation ?</summary><p>Aucun problème. Le diagnostic a de la valeur en lui-même : vous saurez quoi régler en priorité et ce que ça représente en euros. L'installation est une étape séparée, que vous choisissez — ou pas.</p></details>
+      <details><summary>Et si je veux seulement le diagnostic, sans installation ?</summary><p>Aucun problème. Le diagnostic a de la valeur en lui-même : vous saurez quoi régler en priorité et ce que ça représente en euros. L'installation est une étape séparée, que vous choisissez ou non.</p></details>
       <details><summary>Mon associé ou mon équipe peut participer à l'appel ?</summary><p>Bien sûr. Plus j'ai de visibilité sur votre fonctionnement réel, plus le diagnostic est précis. Invitez qui vous voulez.</p></details>
     </div>
   </div>
@@ -268,7 +295,7 @@ footer p{font-size:.85rem;color:var(--muted2)}
   <div class="wrap">
     <div class="final" style="padding:64px 24px">
       <h2>Ça fait des mois que vous repoussez le sujet. On le débloque en un appel.</h2>
-      <p class="lead" style="margin-bottom:30px">Réservez votre appel gratuit de 30 minutes. On identifie ensemble la tâche qui vous coûte le plus — même si vous ne travaillez jamais avec moi.</p>
+      <p class="lead" style="margin-bottom:30px">Réservez votre appel gratuit de 30 minutes. On identifie ensemble la tâche qui vous coûte le plus, même si vous ne travaillez jamais avec moi.</p>
       <a href="https://calendly.com/arnaud-monsieur-ia/30min" class="cta">Réserver mon appel gratuit</a>
       <span class="cta-note">Créneaux en heure française · Confirmation immédiate</span>
     </div>
@@ -276,7 +303,7 @@ footer p{font-size:.85rem;color:var(--muted2)}
 </section>
 
 <footer>
-  <div class="wrap"><p>© 2026 Arnaud · Monsieur IA · Fusion Digital — Audit &amp; implémentation IA</p></div>
+  <div class="wrap"><p>© 2026 Arnaud · Monsieur IA · Fusion Digital · Audit &amp; implémentation IA</p></div>
 </footer>
 
 <script>
@@ -290,7 +317,7 @@ footer p{font-size:.85rem;color:var(--muted2)}
     var year=hours*cost*52, month=Math.round(year/12);
     hV.textContent=hours+' h'; cV.textContent=cost+' €';
     total.textContent=fmt.format(year)+' € / an';
-    var extra = month>=2500 ? ' — plus qu’un salaire à temps plein.' : '.';
+    var extra = month>=2500 ? ', plus qu’un salaire à temps plein.' : '.';
     monthly.textContent='Soit '+fmt.format(month)+' € qui s’évaporent chaque mois'+extra;
   }
   h.addEventListener('input',upd); c.addEventListener('input',upd); upd();
