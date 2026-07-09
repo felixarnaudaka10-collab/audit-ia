@@ -111,6 +111,15 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(11,7,20,.82);backdro
   .founder-grid{grid-template-columns:1fr;gap:24px;text-align:center}
   .founder-photo img{width:160px;height:160px;margin:0 auto}
 }
+.testi-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:32px}
+.testi{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:26px;display:flex;flex-direction:column;gap:14px}
+.testi .stars{color:#FBBF24;font-size:1rem;letter-spacing:2px}
+.testi blockquote{color:var(--muted);font-size:.98rem;font-style:italic;line-height:1.6}
+.testi .who{margin-top:auto;padding-top:6px}
+.testi .who .n{color:var(--txt);font-weight:700;font-size:.95rem}
+.testi .who .s{color:var(--violet-light);font-size:.85rem}
+.testi-tag{display:inline-block;align-self:flex-start;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--violet-light);background:var(--violet-soft);border:1px solid rgba(139,92,246,.25);padding:4px 10px;border-radius:999px}
+@media (max-width:760px){.testi-grid{grid-template-columns:1fr}}
 .faq{display:grid;gap:12px;margin-top:28px;max-width:780px;margin-left:auto;margin-right:auto}
 details{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:4px 22px}
 summary{cursor:pointer;font-weight:600;color:var(--txt);padding:18px 0;list-style:none;display:flex;justify-content:space-between;align-items:center}
@@ -349,6 +358,40 @@ footer p{font-size:.85rem;color:var(--muted2)}
         <p>Chaque diagnostic, c'est moi qui le mène personnellement. Je regarde comment votre entreprise fonctionne, je vous montre où ça fuit, et on construit à partir de là.</p>
         <p class="name">Arnaud</p>
         <p class="role">CEO Fusion Digital · Audit &amp; implémentation IA</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AVIS CLIENTS -->
+<section style="padding-top:0" id="avis">
+  <div class="wrap">
+    <h2 class="center">Ils nous ont confié leur automatisation. Voilà ce qu'ils en disent.</h2>
+    <p class="lead center">Hôtellerie, assurance, bâtiment, médias : des secteurs différents, le même résultat.</p>
+    <div class="testi-grid">
+      <div class="testi">
+        <span class="testi-tag">Acquisition clients</span>
+        <span class="stars">★★★★★</span>
+        <blockquote>« Je n'ai plus à gérer tout ce qui est compliqué avec Meta Ads — avant, je n'y comprenais rien. Aujourd'hui, mon chiffre d'affaires a doublé et je signe plus facilement grâce à Fusion Digital. »</blockquote>
+        <div class="who"><div class="n">Paint Concept</div><div class="s">Peinture &amp; rénovation</div></div>
+      </div>
+      <div class="testi">
+        <span class="testi-tag">Acquisition clients</span>
+        <span class="stars">★★★★★</span>
+        <blockquote>« Fusion Digital a mis en place notre système d'acquisition de clients. Les prospects qualifiés arrivent maintenant tout seuls, avec les relances automatisées derrière. Je ne cours plus après les leads : ils viennent à nous. »</blockquote>
+        <div class="who"><div class="n">Laurent</div><div class="s">Dirigeant · Courtage en assurance</div></div>
+      </div>
+      <div class="testi">
+        <span class="testi-tag">Formation &amp; automatisation</span>
+        <span class="stars">★★★★★</span>
+        <blockquote>« Arnaud a formé notre équipe à l'IA en une après-midi. Des tâches qui nous prenaient des heures — réponses clients, organisation interne — sont maintenant traitées en quelques minutes. Concret, adapté à notre réalité d'hôtel, et on s'en sert vraiment tous les jours. »</blockquote>
+        <div class="who"><div class="n">Ana</div><div class="s">Directrice · Hôtel à Tignes</div></div>
+      </div>
+      <div class="testi">
+        <span class="testi-tag">Automatisation</span>
+        <span class="stars">★★★★★</span>
+        <blockquote>« Notre production d'articles est passée en pilote automatique : rédaction assistée, publication programmée sur WordPress. Un système simple, installé rapidement, qui tourne sans nous. »</blockquote>
+        <div class="who"><div class="n">ChronoNews</div><div class="s">Média en ligne</div></div>
       </div>
     </div>
   </div>
