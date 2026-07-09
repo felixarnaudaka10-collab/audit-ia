@@ -111,6 +111,14 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(11,7,20,.82);backdro
   .founder-grid{grid-template-columns:1fr;gap:24px;text-align:center}
   .founder-photo img{width:160px;height:160px;margin:0 auto}
 }
+.audit-box{background:var(--panel);border:1px solid rgba(139,92,246,.3);border-radius:24px;padding:52px 28px}
+.audit-progress{height:6px;background:rgba(244,242,248,.08);border-radius:999px;overflow:hidden}
+.audit-progress div{height:100%;width:0;background:var(--violet);border-radius:999px;transition:width .3s}
+.audit-opts{display:grid;gap:10px}
+.audit-opts button{text-align:left;background:var(--panel-soft);border:1px solid var(--border);border-radius:12px;padding:16px 18px;color:var(--txt);font-size:1rem;font-family:inherit;cursor:pointer;transition:border-color .15s,background .15s}
+.audit-opts button:hover{border-color:var(--violet);background:var(--violet-soft)}
+.audit-scorebar{height:10px;background:rgba(244,242,248,.08);border-radius:999px;overflow:hidden;max-width:380px;margin:14px auto 0}
+.audit-scorebar div{height:100%;width:0;background:linear-gradient(90deg,var(--red),var(--violet));border-radius:999px;transition:width .8s ease}
 .testi-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:32px}
 .testi{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:26px;display:flex;flex-direction:column;gap:14px}
 .testi .logo{display:inline-flex;align-items:center;align-self:flex-start;background:#fff;border-radius:10px;padding:8px 14px;height:52px}
@@ -302,6 +310,46 @@ footer p{font-size:.85rem;color:var(--muted2)}
   </div>
 </section>
 
+<!-- AUDIT INTERACTIF -->
+<section style="padding-top:0" id="audit">
+  <div class="wrap">
+    <div class="audit-box">
+      <p class="eyebrow center" style="margin-bottom:8px">Audit rapide</p>
+      <h2 class="center" style="margin-bottom:8px">Faites votre audit IA en 90 secondes</h2>
+      <p class="lead center">7 questions. À la fin : votre score d'automatisation, votre fuite n°1 et ce qu'elle vous coûte par an.</p>
+
+      <div id="quiz" style="max-width:640px;margin:32px auto 0">
+        <div class="audit-progress"><div id="apBar"></div></div>
+        <p id="aQnum" style="font-size:.85rem;color:var(--muted2);margin:14px 0 6px"></p>
+        <h3 id="aQ" style="font-size:1.25rem;margin-bottom:18px"></h3>
+        <div id="aOpts" class="audit-opts"></div>
+      </div>
+
+      <div id="aGate" style="display:none;max-width:520px;margin:32px auto 0;text-align:center">
+        <h3 style="font-size:1.3rem">✅ Votre audit est prêt.</h3>
+        <p style="margin:10px 0 20px">Entrez votre email pour afficher votre score, votre fuite n°1 et l'estimation de ce qu'elle vous coûte.</p>
+        <form id="aForm" style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
+          <input type="email" id="aEmail" required placeholder="votre@email.pro" style="flex:1;min-width:220px;padding:15px 18px;border-radius:11px;border:1px solid var(--border);background:var(--bg);color:var(--txt);font-size:1rem">
+          <button type="submit" class="cta" style="padding:15px 26px;font-size:1rem">Voir mon résultat</button>
+        </form>
+        <p style="font-size:.8rem;color:var(--muted2);margin-top:12px">Vos réponses restent confidentielles. Zéro spam.</p>
+      </div>
+
+      <div id="aResult" style="display:none;max-width:640px;margin:32px auto 0;text-align:center">
+        <p style="font-size:.9rem;color:var(--muted2)">Score d'automatisation de votre entreprise</p>
+        <div class="math-total" id="aScore" style="margin-top:4px"></div>
+        <div class="audit-scorebar"><div id="aScoreFill"></div></div>
+        <div class="acq-law" style="text-align:left;margin-top:26px"><p id="aFuite"></p></div>
+        <p id="aCost" style="margin-top:18px;font-size:1.05rem"></p>
+        <div style="margin-top:28px">
+          <a href="https://calendly.com/arnaud-monsieur-ia/30min" class="cta">Régler ma fuite n°1 — appel gratuit 30 min</a>
+          <span class="cta-note">Je reprends votre audit point par point pendant l'appel, avec le plan pour y remédier.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CALCULATEUR INTERACTIF -->
 <section style="padding-top:0">
   <div class="wrap">
@@ -446,6 +494,67 @@ footer p{font-size:.85rem;color:var(--muted2)}
     monthly.textContent='Soit '+fmt.format(month)+' € qui s’évaporent chaque mois'+extra;
   }
   h.addEventListener('input',upd); c.addEventListener('input',upd); upd();
+})();
+
+/* ===== AUDIT INTERACTIF ===== */
+(function(){
+  var Q=[
+    {q:"Dans quel secteur êtes-vous ?",k:"secteur",o:[["BTP / artisanat"],["Hôtellerie / restauration"],["Assurance / finance / immobilier"],["Commerce / e-commerce"],["Autre secteur"]]},
+    {q:"Quelle est la taille de votre équipe ?",k:"taille",o:[["Je suis seul(e)"],["2 à 5 personnes"],["6 à 20 personnes"],["Plus de 20 personnes"]]},
+    {q:"Combien d'heures par semaine votre équipe passe-t-elle sur des tâches répétitives (saisie, copier-coller, relances à la main…) ?",k:"heures",o:[["Moins de 5 h",3,3],["5 à 15 h",2,10],["15 à 30 h",1,22],["Plus de 30 h",0,35]]},
+    {q:"Comment sont gérés vos leads / demandes entrantes ?",k:"leads",o:[["À la main — certains passent à la trappe",0],["Un fichier Excel ou des notes",1],["Un CRM avec relances automatiques",3]]},
+    {q:"Combien de temps pour sortir un devis ou répondre à une demande ?",k:"devis",o:[["Le jour même",3],["2 à 3 jours",1],["Plus d'une semaine",0]]},
+    {q:"Comment trouvez-vous de nouveaux clients aujourd'hui ?",k:"acq",o:[["Bouche-à-oreille uniquement",0],["De la pub, mais sans vrai système derrière",1],["Un système d'acquisition qui tourne",3]]},
+    {q:"Et l'IA, aujourd'hui, chez vous ?",k:"ia",o:[["Pas du tout",0],["ChatGPT de temps en temps",1],["Intégrée dans nos process",3]]}
+  ];
+  var i=0, pts=0, maxPts=15, hours=10, ans={};
+  var quiz=document.getElementById('quiz'); if(!quiz) return;
+  var bar=document.getElementById('apBar'),qn=document.getElementById('aQnum'),qt=document.getElementById('aQ'),opts=document.getElementById('aOpts');
+  var gate=document.getElementById('aGate'),result=document.getElementById('aResult');
+  function show(){
+    bar.style.width=Math.round(i/Q.length*100)+'%';
+    qn.textContent='Question '+(i+1)+' / '+Q.length;
+    qt.textContent=Q[i].q; opts.innerHTML='';
+    Q[i].o.forEach(function(o){
+      var b=document.createElement('button'); b.textContent=o[0];
+      b.onclick=function(){
+        ans[Q[i].k]=o[0];
+        if(typeof o[1]==='number') pts+=o[1];
+        if(typeof o[2]==='number') hours=o[2];
+        i++;
+        if(i<Q.length){show();}else{bar.style.width='100%';quiz.style.display='none';
+          if(localStorage.getItem('audit_unlocked')){reveal();}else{gate.style.display='block';gate.scrollIntoView({behavior:'smooth',block:'center'});}
+        }
+      };
+      opts.appendChild(b);
+    });
+  }
+  function fuite(){
+    if(ans.leads&&ans.leads.indexOf('main')>-1) return "🔎 Votre fuite n°1 : la relance des leads. Des demandes arrivent, refroidissent, et partent chez un concurrent qui a répondu en 5 minutes. C'est le premier chantier à automatiser — et souvent le plus rentable.";
+    if(ans.acq&&ans.acq.indexOf('Bouche')>-1) return "🔎 Votre fuite n°1 : l'acquisition de clients. Votre chiffre dépend du bouche-à-oreille, donc du hasard. Et à partir du 11 août 2026, le démarchage sans consentement devient illégal : il vous faut un système où les clients viennent à vous.";
+    if(ans.devis&&ans.devis.indexOf('semaine')>-1) return "🔎 Votre fuite n°1 : vos devis. Plus d'une semaine de délai, c'est autant d'occasions pour le prospect de signer ailleurs. Un devis le jour même change radicalement votre taux de signature.";
+    if(hours>=22) return "🔎 Votre fuite n°1 : les tâches répétitives. Votre équipe passe l'équivalent de plusieurs journées par semaine sur du travail qu'une automatisation ferait à sa place.";
+    return "🔎 Bonne nouvelle : vos bases sont solides. Mais il reste des gains rapides — c'est exactement ce qu'on identifie pendant l'appel de diagnostic.";
+  }
+  function reveal(){
+    gate.style.display='none'; result.style.display='block';
+    var score=Math.round(pts/maxPts*100);
+    document.getElementById('aScore').textContent=score+' / 100';
+    setTimeout(function(){document.getElementById('aScoreFill').style.width=score+'%';},100);
+    document.getElementById('aFuite').innerHTML='<strong style="color:var(--txt)">'+fuite()+'</strong>';
+    var year=new Intl.NumberFormat('fr-FR').format(hours*35*52);
+    document.getElementById('aCost').innerHTML='Estimation : vos tâches manuelles vous coûtent environ <strong style="color:var(--violet-light)">'+year+' € par an</strong> ('+hours+' h/sem × 35 €/h chargé).';
+    result.scrollIntoView({behavior:'smooth',block:'center'});
+  }
+  document.getElementById('aForm').addEventListener('submit',function(e){
+    e.preventDefault();
+    var email=document.getElementById('aEmail').value;
+    var msg='AUDIT IA — nouveau lead\nEmail : '+email+'\nSecteur : '+(ans.secteur||'-')+'\nTaille : '+(ans.taille||'-')+'\nHeures répétitives : '+(ans.heures||'-')+'\nLeads : '+(ans.leads||'-')+'\nDevis : '+(ans.devis||'-')+'\nAcquisition : '+(ans.acq||'-')+'\nIA : '+(ans.ia||'-')+'\nScore : '+Math.round(pts/maxPts*100)+'/100';
+    try{fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({access_key:'038b1035-ecbd-4506-bd90-5a6421828169',subject:'Nouveau lead — Audit IA en ligne',replyto:email,message:msg})});}catch(err){}
+    localStorage.setItem('audit_unlocked','1');
+    reveal();
+  });
+  show();
 })();
 </script>
 </body>
